@@ -5,7 +5,7 @@ import Stripe from "stripe";
 //gateway initialize
 const stripe = new Stripe(process.env.STRIPE_SECRET);
 
-const currency = "inr";
+const currency = "usd";
 const deliveryCharge = 10;
 
 const placeOrder = async (req, res) => {
