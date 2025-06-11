@@ -24,6 +24,7 @@ const Cart = () => {
       }
       setCartData(tempData);
     }
+    console.log(products);
   }, [cartItems, products]);
 
   return (
@@ -40,6 +41,7 @@ const Cart = () => {
         <div className="space-y-6">
           {cartData.map((item, index) => {
             const product = products.find(p => p._id === item._id);
+            if (!product) return null;
             return (
               <div
                 key={index}

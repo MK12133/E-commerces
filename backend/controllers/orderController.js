@@ -69,7 +69,7 @@ const placeOrderStripe = async (req, res) => {
     });
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card", "amazon_pay", "paypal", "samsung_pay"],
+      payment_method_types: ["card", "amazon_pay", "samsung_pay"],
       success_url: `${origin}/verify?success=true&orderId=${newOrder._id}`,
       cancel_url: `${origin}/verify?success=false&orderId=${newOrder._id}`,
       line_items,
